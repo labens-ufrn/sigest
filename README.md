@@ -1,0 +1,2 @@
+# sigest
+O Sistema de Gerenciamento de Estágios (SIGEST) é um software a ser desenvolvido como requisito da disciplina de Gestão de Projeto de Software (DCT2303), com intuito de contribuir na otimização dos processos de estágio presentes no curso de Bacharelado em Sistemas de Informação(BSI) da Universidade Federal do Rio Grande do Norte(UFRN), no Centro de Ensino Superior do Seridó(CERES) campus Caicó, o mesmo busca agregar recursos aos mecanismos de estágio já utilizados, mecanismos esses disponibilizados pelo Sistema Integrado de Gestão de Atividades Acadêmicas (SIGAA).

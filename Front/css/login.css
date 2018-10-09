@@ -1,0 +1,19 @@
+.carrosel {
+    width: 100%;
+    height: 555px;
+    background-color: #777777;
+}
+
+.login-realizar-cadastro, .login-esqueceu-senha {
+    font-size: 0.9rem;
+    text-decoration: underline;
+    padding-right: 1em;
+}
+
+.login-realizar-cadastro a, .login-esqueceu-senha a {
+    color: #fff;
+}
+
+.login-botao-entrar {
+    padding-bottom: 1.3em;
+}

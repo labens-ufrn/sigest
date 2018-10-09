@@ -1,0 +1,12 @@
+Listagem de Prioridades
+
+<br>
+
+<p>{{ message }}</p>
+{% for prioridades in object_list %}
+
+    <a href="{% url 'detalhar_prioridade' prioridades.pk %}">{{ prioridades }}</a><br>
+
+{% endfor %}
+
+<a href="{% url 'criar_prioridade' %}">Novo</a>

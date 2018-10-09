@@ -1,0 +1,12 @@
+Listagem de Usuarios
+
+<br>
+
+<p>{{ message }}</p>
+{% for usuarios in object_list %}
+
+    <a href="{% url 'detalhar_usuario' usuarios.pk %}">{{ usuarios }}</a><br>
+
+{% endfor %}
+
+<a href="{% url 'criar_usuario' %}">Novo</a>

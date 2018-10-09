@@ -1,0 +1,12 @@
+Listagem de Funções
+
+<br>
+
+<p>{{ message }}</p>
+{% for funcoes in object_list %}
+
+    <a href="{% url 'detalhar_funcao' funcoes.pk %}">{{ funcoes }}</a><br>
+
+{% endfor %}
+
+<a href="{% url 'criar_funcao' %}">Novo</a>

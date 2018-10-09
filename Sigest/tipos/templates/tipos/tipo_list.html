@@ -1,0 +1,12 @@
+Listagem de Tipos
+
+<br>
+
+<p>{{ message }}</p>
+{% for tipos in object_list %}
+
+    <a href="{% url 'detalhar_tipo' tipos.pk %}">{{ tipos }}</a><br>
+
+{% endfor %}
+
+<a href="{% url 'criar_tipo' %}">Novo</a>

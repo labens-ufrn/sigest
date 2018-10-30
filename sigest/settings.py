@@ -37,11 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'funcoes',
-    'usuarios',
     'tarefas',
-    'contas'
-
 ]
 
 MIDDLEWARE = [
@@ -54,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SigestAlfa.urls'
+ROOT_URLCONF = 'sigest.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SigestAlfa.wsgi.application'
+WSGI_APPLICATION = 'sigest.wsgi.application'
 
 
 # Database
@@ -124,6 +120,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    'static',
+]
 
 MEDIA_URL = '/media/'
 

@@ -18,12 +18,12 @@ class TarefaDetail(DetailView):
 
 class TarefaCreate(CreateView):
     model = Tarefa
-    fields = ['titulo', 'descricao', 'tipo', 'prioridade', 'situacao', 'data_inicio', 'data_fim', 'horas_estimadas', 'horas_gastas']
+    fields = ['nome', 'descricao', 'tipo', 'prioridade', 'situacao', 'data_inicio', 'data_fim', 'horas_estimadas', 'horas_gastas']
     success_url = '/tarefas/listar_tarefa'
 
 class TarefaUpdate(UpdateView):
     model = Tarefa
-    fields = ['titulo', 'descricao', 'tipo', 'prioridade', 'situacao', 'data_inicio', 'data_fim', 'horas_estimadas', 'horas_gastas']
+    fields = ['nome', 'descricao', 'tipo', 'prioridade', 'situacao', 'data_inicio', 'data_fim', 'horas_estimadas', 'horas_gastas']
     success_url = reverse_lazy('listar_tarefa')
 
 

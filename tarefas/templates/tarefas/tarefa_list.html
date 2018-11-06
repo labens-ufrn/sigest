@@ -1,47 +1,12 @@
-{% extends "base.html" %}
+Listagem de Usuarios
 
-{% block title %}Tarefas{% endblock title %}
+<br>
 
-{% block main %}
+<p>{{ message }}</p>
+{% for tarefas in object_list %}
 
-    <!-- Page Content  -->
-    <div id="content">
+    <a href="{% url 'detalhar_tarefa' tarefas.pk %}">{{ tarefas }}</a><br>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+{% endfor %}
 
-            <button type="button" id="sidebarCollapse" class="btn btn-secondary">
-                <i class="fas fa-align-justify"></i>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-align-justify"></i>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'criar_tarefa' %}">+ Nova tarefa</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="row">
-        {% for tarefas in object_list %}
-        <div class="col-sm-4 card-grid">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{tarefas.titulo}}</h5>
-                    <p class="card-text">{{tarefas.descricao}}</p>
-                    <p class="card-text">{{tarefas.data_fim}}</p>
-                    <a href="{% url 'detalhar_tarefa' tarefas.pk %}" class="card-link">Ver detalhes</a>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    </div>
-
-{% endblock main %}
+<a href="{% url 'criar_tarefa' %}">Novo</a>

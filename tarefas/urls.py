@@ -7,5 +7,4 @@ urlpatterns = [
     path('criar_tarefa/', TarefaCreate.as_view(), name='criar_tarefa'),
     path('atualizar_tarefa/<int:pk>/', TarefaUpdate.as_view(), name='atualizar_tarefa'),
     path('deletar_tarefa/<int:pk>/', TarefaDelete.as_view(), name='deletar_tarefa'),
-
 ]

@@ -1,0 +1,9 @@
+<h1>Articles</h1>
+<ul>
+{% for students in object_list %}
+    <li> </li>
+     <a href="{% url 'student_detail' students.pk %}">{{ students.user.first_name}}</a>
+{% empty %}
+    <li>Sem estudantes.</li>
+{% endfor %}
+</ul>

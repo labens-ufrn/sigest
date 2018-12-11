@@ -7,7 +7,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/senha.css">
   </head>
   <body>
     <!-- Cabeçalho -->
@@ -18,19 +18,20 @@
     </header>
 
     <main>
-      <div class="container">
-        <div class="botoes">
-          <a href="cadastro-aluno.html">
-            <button type="button" class="btn btn-outline-dark btn-lg btn-block">Aluno</button>
-          </a>
-          <a href="cadastro-professor.html">
-            <button type="button" class="btn btn-outline-dark btn-lg btn-block">Professor</button>
-          </a>
-          <a href="cadastro-supervisor.html">
-            <button type="button" class="btn btn-outline-dark btn-lg btn-block">Supervisor</button>
-          </a>
-        </div>
-      </div>
+        <form>
+            <div class="row">
+                <div class="col-sm-8 offset-2">
+                    <h1>Recuperar a senha</h1>
+                </div>
+                <div class="col-sm-8 offset-2">
+                    <label for="InputNome">Digite a sua nova senha</label>
+                    <input type="text" class="form-control" id="InputNome" placeholder="Seu email">
+                    <label for="InputNome">Digite novamente a sua nova senha</label>
+                    <input type="text" class="form-control" id="InputNome" placeholder="Seu email">
+                    <a href="#"><button type="submit" class="btn btn-dark">Mudar senha</button></a>
+                </div>
+            </div>
+        </form>
     </main>
 
     <!-- Importação dos scripts -->

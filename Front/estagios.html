@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/tarefas.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/usuarios.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -71,55 +72,119 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="tarefas-cadastrar.html">+ Nova tarefa</a>
+                                <a class="nav-link" href="#">+ Cadastrar estágio</a>
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </nav>
-            <div class="row">
-							<div class="col-sm-4 card-grid">
-								<div class="card" style="width: 18rem;">
-									<div class="card-body">
-										<h5 class="card-title">Nome da tarefa</h5>
-										<p class="card-text">Descrição da tarefa</p>
-										<p class="card-text">27/08/2018</p>
-										<a href="tarefas-detalhes.html" class="card-link">Ver detalhes</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4 card-grid">
-								<div class="card" style="width: 18rem;">
-									<div class="card-body">
-										<h5 class="card-title">Nome da tarefa</h5>
-										<p class="card-text">Descrição da tarefa</p>
-										<p class="card-text">27/08/2018</p>
-										<a href="tarefas-detalhes.html" class="card-link">Ver detalhes</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4 card-grid">
-								<div class="card" style="width: 18rem;">
-									<div class="card-body">
-										<h5 class="card-title">Nome da tarefa</h5>
-										<p class="card-text">Descrição da tarefa</p>
-										<p class="card-text">27/08/2018</p>
-										<a href="tarefas-detalhes.html" class="card-link">Ver detalhes</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-4 card-grid">
-								<div class="card" style="width: 18rem;">
-									<div class="card-body">
-										<h5 class="card-title">Nome da tarefa</h5>
-										<p class="card-text">Descrição da tarefa</p>
-										<p class="card-text">27/08/2018</p>
-										<a href="tarefas-detalhes.html" class="card-link">Ver detalhes</a>
-									</div>
-								</div>
-							</div>
-            </div>
-            
+
+        <div class="container">
+
+<!-- Principal -->
+    <div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Estágios ativos
+            </button>
+        </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Aluno</th>
+                <th scope="col">Matrícula</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>José</td>
+                <td>2014000000</td>
+                <td>jose@gmail.com</td>
+                <td><button type="button" class="btn btn-secondary">Ver detalhes</button></td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>José</td>
+                <td>2014000000</td>
+                <td>jose@gmail.com</td>
+                <td><button type="button" class="btn btn-secondary">Ver detalhes</button></td>
+                </tr>
+                <tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>José</td>
+                <td>2014000000</td>
+                <td>jose@gmail.com</td>
+                <td><button type="button" class="btn btn-secondary">Ver detalhes</button></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Estágios desativos
+            </button>
+        </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Aluno</th>
+                <th scope="col">Matrícula</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>José</td>
+                <td>2014000000</td>
+                <td>jose@gmail.com</td>
+                <td><button type="button" class="btn btn-secondary">Ver detalhes</button></td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>José</td>
+                <td>2014000000</td>
+                <td>jose@gmail.com</td>
+                <td><button type="button" class="btn btn-secondary">Ver detalhes</button></td>
+                </tr>
+                <tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>José</td>
+                <td>2014000000</td>
+                <td>jose@gmail.com</td>
+                <td><button type="button" class="btn btn-secondary">Ver detalhes</button></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+
+<!-- Principal -->
+  
         </div>
     </div>
 
@@ -146,5 +211,4 @@
         });
     </script>
 </body>
-
 </html>

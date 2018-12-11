@@ -1,3 +1,23 @@
-from django.shortcuts import render
+from .models import Tarefa
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
 
-# Create your views here.
+class TarefaList(ListView):
+    model = Tarefa
+class TarefaDetail(DetailView):
+    model = Tarefa
+
+class TarefaCreate(CreateView):
+    model = Tarefa
+    fields = ['nome', 'descricao', 'tipo', 'status', 'prioridade', 'data_inicio', 'data_fim', 'horas_estimadas', 'horas_gastas']
+    success_url = reverse_lazy('listar_tarefa')
+
+
+class TarefaUpdate(UpdateView):
+    model = Tarefa
+    fields = ['nome', 'descricao', 'tipo', 'status', 'prioridade', 'data_inicio', 'data_fim', 'horas_estimadas', 'horas_gastas']
+    success_url = reverse_lazy('listar_tarefa')

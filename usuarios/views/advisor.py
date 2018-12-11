@@ -20,17 +20,20 @@ class AdvisorSignupView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('advisor_list')
-
+    
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class AdvisorListView(ListView):
     model = Advisor
     context_object_name = 'advisors'
     template_name = 'advisors/advisors_list.html'
-
+    
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class AdvisorDetail(DetailView):
     model = Usuario
     context_object_name = 'advisor_detail'
     template_name = 'advisors/advisor_detail.html'
 
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class AdvisorUpdate(UpdateView):
     model = Usuario
     form_class = AdvisorUpdateForm

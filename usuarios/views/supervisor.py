@@ -20,19 +20,19 @@ class SupervisorSignupView(CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('supervisor_list')
-
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class SupervisorListView(ListView):
     model = Supervisor
     context_object_name = 'supervisors'
     template_name = 'supervisors/supervisors_list.html'
 
-
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class SupervisorDetail(DetailView):
     model = Usuario
     context_object_name = 'supervisor_detail'
     template_name = 'supervisors/supervisor_detail.html'
 
-
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class SupervisorUpdate(UpdateView):
     model = Usuario
     form_class = SupervisorUpdateForm

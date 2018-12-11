@@ -3,7 +3,11 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Usuario,Student,Advisor,Supervisor
 from django.db import transaction
 from django.shortcuts import redirect
+from django.core.mail import send_mail
+from django.conf import settings
 
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 
 class StudentSignupForm(UserCreationForm):
@@ -27,10 +31,9 @@ class StudentSignupForm(UserCreationForm):
 class StudentUpdateForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ('first_name', 'username', 'email', 'matricula')
+        fields = ('first_name', 'username', 'email', 'matricula','is_active')
 
     @transaction.atomic
-
     def update_student(request):
 
             try:
@@ -48,6 +51,7 @@ class StudentUpdateForm(forms.ModelForm):
                 else:
                     form = StudentUpdateForm(instance=student)
                     return render('student_list')
+
 
 
 

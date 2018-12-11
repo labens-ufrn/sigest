@@ -1,5 +1,6 @@
 from django.contrib.auth import login
 from django.shortcuts import get_object_or_404, redirect, render
+import requests
 from django.urls import reverse_lazy
 from django.views.generic import CreateView,ListView,UpdateView,DetailView
 from ..models import Usuario, Supervisor

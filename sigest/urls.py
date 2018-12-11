@@ -1,4 +1,4 @@
-"""SigestAlfa URL Configuration
+"""sigest URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -15,36 +15,39 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from tarefas import urls as tarefas_urls
-from django.views.generic.base import TemplateView
-from django.contrib import admin
-from django.urls import path,include
 from usuarios.views import classroom, student,advisor,supervisor
+from tarefas import urls as tarefas_urls
 import django.contrib.auth.urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tarefas/', include(tarefas_urls)),
+
     #ACcoounts URLS
+
 
     path('accounts/',include(django.contrib.auth.urls)),
     path('accounts/signup/', classroom.SignUpView.as_view(), name='signup'),
     path('accounts/signup/student/', student.StudentSignupView.as_view(), name='student_signup'),
     path('accounts/signup/advisor/', advisor.AdvisorSignupView.as_view(), name='advisor_signup'),
     path('accounts/signup/supervisor/', supervisor.SupervisorSignupView.as_view(), name='supervisor_signup'),
-    
-     #Students ULRS
+
+
+    #Students ULRS
 
     path('accounts/list/student/', student.StudentListView.as_view(), name='student_list'),
     path('accounts/detail/users/<int:pk>/',student.StudentDetail.as_view(),name='student_detail'),
     path('accounts/update/users/<int:pk>/',student.StudentUpdate.as_view(),name='student_update'),
-    
+
+    #Advisors URLS
+
     path('accounts/list/advisor/', advisor.AdvisorListView.as_view(), name='advisor_list'),
-    path('accounts/detail/<int:pk>/users/',advisor.AdvisorDetail.as_view(),name='advisor_detail'),
-    path('accounts/update<int:pk>/users/',advisor.AdvisorUpdate.as_view(),name='advisor_update'),
-    
+    path('accounts/detail/users/<int:pk/',advisor.AdvisorDetail.as_view(),name='advisor_detail'),
+    path('accounts/update/users/<int:pk/',advisor.AdvisorUpdate.as_view(),name='advisor_update'),
+
+
+
     # Supervisor URLS
     path('accounts/list/supervisor/', supervisor.SupervisorListView.as_view(), name='supervisor_list'),
     path('accounts/detail/users/<int:pk>/',supervisor.SupervisorDetail.as_view(),name='supervisor_detail'),
     path('accounts/update/users/<int:pk>/',supervisor.SupervisorUpdate.as_view(),name='supervisor_update'),
-
 ]

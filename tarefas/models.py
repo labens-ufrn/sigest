@@ -73,7 +73,6 @@ class Tarefa(models.Model):
 
     nome = models.CharField(max_length=40)
     descricao = models.CharField(max_length=400)
-    atribuido = models.ForeignKey(Usuario, null=True, blank=False, on_delete=models.PROTECT)
     tipo = models.CharField(choices=TIPO_ESCOLHA, default=BUG, max_length=50)
     status = models.CharField(choices=STATUS_ESCOLHA, default=EM_ANDAMENTO_10, max_length=50)
     prioridade = models.CharField(choices=PRIORIDADE_ESCOLHA, default=NORMAL, max_length=50)

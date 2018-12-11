@@ -35,10 +35,10 @@ class UserManager(BaseUserManager):
             return user
 
 class Usuario(AbstractBaseUser,PermissionsMixin):
-    first_name = models.CharField(_('Nome completo *'), max_length=255,  help_text=_('Digite seu nome completo,exemplo: Fulano da Silva'))
+    first_name = models.CharField(_('Nome completo'), max_length=255,  help_text=_('Defina seu nome completo, exemplo: Fulano da Silva'))
     username = models.CharField(_('usuario'), max_length=15, unique=True, help_text=_('Requer 15 caracteres ou menos'))
     password = models.CharField(_('senha'), max_length=15, help_text=('Digite uma senha com 15 caracteres ou menos'))
-    email = models.EmailField(_('email'), max_length=255, unique=True,help_text=('Digite um e-mail válido, exemplo: example@mail.com'))
+    email = models.EmailField(_('email'), max_length=255, unique=True)
 
     is_superuser = models.BooleanField(_('Status de Superusuário'), default=False,
                                        help_text=_('Designado para Superusuários '))
@@ -55,13 +55,15 @@ class Usuario(AbstractBaseUser,PermissionsMixin):
 
     is_supervisor = models.BooleanField(_('Supervisor'), default=False,
                                       help_text=_('Designado para usuarios do tipo Supervisor'))
+    is_coordinator = models.BooleanField(_('Coordenador'), default=False,
+                                        help_text=_('Designado para usuarios do tipo Coordenador'))
 
     date_joined = models.DateTimeField(_('data de ingresso'), default=timezone.now)
 
     is_trusty = models.BooleanField(_('Email confirmado'), default=False,
                                     help_text=_('Usuários com contas confirmadas.'))
 
-    matricula = models.IntegerField(help_text='Informe sua matrícula, apenas números')
+    matricula = models.IntegerField()
 
     objects = UserManager()
 
@@ -75,13 +77,8 @@ class Usuario(AbstractBaseUser,PermissionsMixin):
         verbose_name = _('usuario')
         verbose_name_plural = _('usuarios')
 
-
-class Student(AbstractBaseUser):
+class Student(models.Model):
     user = models.OneToOneField(Usuario, on_delete=models.CASCADE,primary_key=True)
-    first_name = models.CharField(_('Nome completo *'), max_length=255,help_text=_('Digite seu nome completo,exemplo: Fulano da Silva'))
-
-    def __str__(self):
-        return self.first_name
 
 
 
@@ -94,6 +91,10 @@ class Advisor(models.Model):
 class Supervisor(models.Model):
     user = models.OneToOneField(Usuario, on_delete=models.CASCADE,primary_key=True)
 
+
+
+class Coordinator(models.Model):
+    user = models.OneToOneField(Usuario, on_delete=models.CASCADE,primary_key=True)
 
 
 

@@ -28,7 +28,7 @@ class StudentSignupView(CreateView):
         login(self.request, user)
         return redirect('student_list')
 
-@method_decorator([login_required,student_required],name='dispatch')
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class StudentListView(ListView):
     model = Student
     context_object_name = 'students'
@@ -37,7 +37,7 @@ class StudentListView(ListView):
     def get_queryset(self):
         return Student.objects.all()
 
-
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class StudentDetail(DetailView):
     model = Usuario
     context_object_name = 'student_detail'
@@ -46,21 +46,13 @@ class StudentDetail(DetailView):
 
 
 
-
+@method_decorator([login_required,coordinator_required],name='dispatch')
 class StudentUpdate(UpdateView):
     model = Usuario
     form_class = StudentUpdateForm
     context_object_name = 'student_update'
     template_name = 'students/student_update.html'
 
-    success_url = reverse_lazy('student_list')
-    send_mail(
-        'Subject here',
-        'Here is the message.',
-        'from@example.com',
-        ['to@example.com'],
-        fail_silently=False,
-    )
 
 
 
